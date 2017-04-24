@@ -1,5 +1,218 @@
-h1 {
-  font-family: "TEXBold";
+$max-width: 900px;
+
+.wrapper-header {
+  border-bottom: 1px solid #f0f0f0;
+  background: rgba(255,255,255, .8);
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+
+  .container-header {
+    width: 910px;
+    margin: 0 auto;
+    padding: 30px 0;
+
+    @media (max-width: $max-width) {
+      width: 80%;
+    }
+
+    .element-title {
+      font-family: "TEXBold";
+      font-size: 26px;
+    }
+  }
+}
+
+.wrapper-content {
+  padding-top: 90px;
+  width: 100%;
+
+  .element-separator {
+      height: 1px;
+      width: 100%;
+      background: #f0f0f0;
+      border: 0;
+      margin: 0;
+      padding: 0;
+  }
+
+  .container-content {
+    width: 910px;
+    margin: 0 auto;
+
+    @media (max-width: $max-width) {
+      width: 100vw;
+      overflow: hidden;
+    }
+
+    .element-portfolio {
+      height: 100vh;
+      position: relative;
+
+      @media (max-width: $max-width) {
+        height: auto;
+        padding: 30px 0;
+      }
+
+      &:first-child {
+        height: calc(100vh - 90px);
+
+        @media (max-width: $max-width) {
+          height: auto;
+        }
+      }
+
+      .element-showoff {
+        display: inline-block;
+        width: 500px;
+        position: absolute;
+        bottom: 0;
+
+        @media (max-width: $max-width) {
+          position: relative;
+          width: 100vw !important;
+          margin-left: calc(((500px - 100vw)/2) * -1)
+        }
+
+        &.right-oriented {
+          right: 0;
+        }
+      }
+
+      .element-description {
+        width: 380px;
+        display: inline-block;
+        margin-left: 20px;
+        position: absolute;
+        bottom: 50px;
+        right: 0;
+
+        @media (max-width: $max-width) {
+          position: relative;
+          width: 100vw;
+          padding-top: 30px;
+          bottom: 0;
+        }
+
+        &.left-oriented {
+          left: 0;
+          margin: 0 20px 0 0;
+
+          @media (max-width: $max-width) {
+            margin-left: 20px;
+          }
+        }
+
+        h1 {
+          font-family: "TEXBold";
+          font-size: 24px;
+          margin-bottom: 10px;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 20px;
+          font-family: "TEXRegular";
+
+          @media (max-width: $max-width) {
+            width: 90vw;
+          }
+
+
+          a {
+            color: black;
+            cursor: auto;
+
+            &:hover {
+              cursor: hand;
+              opacity: .5;
+            }
+          }
+
+          strong {
+            font-family: "TEXBold";
+            font-size: 12px;
+            margin-top: 10px;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+
+.wrapper-footer {
+  border-top: 1px solid #f0f0f0;
+  // margin-top: 30px;
+
+  .container-footer {
+    width: 910px;
+    margin: 0 auto;
+    padding: 20px 0;
+
+    @media (max-width: $max-width) {
+      width: 100vw;
+    }
+
+    .element-box {
+      width: 230px;
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 30px;
+
+      @media (max-width: $max-width) {
+        width: 80vw;
+        margin: 0 0 30px 20px;
+      }
+
+      &.skills {
+        width: 350px;
+      }
+    }
+
+    h1 {
+      font-family: "TEXBold";
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-family: "TEXRegular";
+      font-size: 12px;
+      line-height: 20px;
+
+      strong {
+        font-family: "TEXBold";
+
+        a {
+          color: #000;
+
+          &:hover {
+            opacity: .5;
+          }
+        }
+      }
+
+      &.element-contact,
+      &.element-copyright {
+        @media (max-width: $max-width) {
+          width: 80vw;
+          margin: 0 0 30px 20px;
+        }
+      }
+
+      &.element-contact {
+        margin-top: 30px;
+      }
+
+      &.element-copyright {
+        border-top: 1px solid #f0f0f0;
+        font-size: 10px;
+        padding-top: 10px;
+        margin-top: 30px;
+      }
+    }
+  }
 }
 
 @font-face {
@@ -35,3 +248,51 @@ h1 {
   font-style: normal;
 }
 
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
