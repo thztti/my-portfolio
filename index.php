@@ -1,3 +1,7 @@
+<?php
+  header("Location: https://www.linkedin.com/in/rafael-thomazetti");
+  die();
+?>
 <!DOCTYPE html>
 <html>
 <head>
